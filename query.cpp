@@ -10,13 +10,19 @@ using namespace std;
 
 int main()
 {
-    int number = 0, sum = 0;
-    cout << "Enter a number : ";
-    cin >> number;
-    for (int i = 1; i <= number; i++)
+    int rows = 4;
+    for (int i = 1; i <= rows; ++i)
     {
-        sum += i;
+        for (int space = 1; space <= rows - i; ++space)
+        {
+            cout << " ";
+        }
+
+        for (int j = 1; j <= (i * 2) - 1; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
     }
-    cout << "Sum : " << sum << endl;
     return 0;
 }

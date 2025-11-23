@@ -10,19 +10,37 @@ using namespace std;
 
 int main()
 {
-    int rows = 4;
-    for (int i = 1; i <= rows; ++i)
-    {
-        for (int space = 1; space <= rows - i; ++space)
-        {
-            cout << " ";
-        }
+    // find second largest number
+    int nums[7] = {0};
 
-        for (int j = 1; j <= (i * 2) - 1; j++)
-        {
-            cout << "*";
-        }
-        cout << endl;
+    for (int i = 0; i < 7; ++i)
+    {
+        cout << "Enter number " << i + 1 << " : ";
+        cin >> nums[i];
     }
+
+    int largest = nums[0];
+
+    for (int i = 1; i < 7; ++i)
+    {
+        if (nums[i] > largest)
+        {
+            largest = nums[i];
+        }
+    }
+
+    int second_largest = INT_MIN;
+
+    for (int i = 0; i < 7; ++i)
+    {
+        if (nums[i] > second_largest && nums[i] < largest)
+        {
+            second_largest = nums[i];
+        }
+    }
+
+    cout << "Largest value : " << largest << endl;
+    cout << "Second Largest value : " << second_largest << endl;
+
     return 0;
 }

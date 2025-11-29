@@ -8,7 +8,7 @@ sum = 1+2+3+4+5 = 15
 #include <iostream>
 using namespace std;
 
-int main()
+/* int main()
 {
     // find second largest number
     int nums[7] = {0};
@@ -41,6 +41,42 @@ int main()
 
     cout << "Largest value : " << largest << endl;
     cout << "Second Largest value : " << second_largest << endl;
+
+    return 0;
+}
+    */
+
+int main()
+{
+    const int size = 4;
+    int arr[size] = {0};
+
+    for (int i = 0; i < size; ++i)
+    {
+        cout << "Enter your number " << i + 1 << " : ";
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < size; ++i)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    for (int i = 0; i < size / 2; ++i)
+    {
+        int temp = arr[i];
+        arr[i] = arr[size - 1 - i];
+        arr[size - 1 - i] = temp;
+    }
+
+    for (int i = 0; i < size; ++i)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
 
     return 0;
 }
